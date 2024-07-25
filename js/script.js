@@ -3,6 +3,8 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            email: null
+            /*
             emails: [
                 {
                     //1
@@ -46,7 +48,20 @@ createApp({
                 },
                 
             ],
+            */
         }
     },
-    methods: {}
+    created() {
+        this.makeTenRandomMails();
+    },
+    methods: {
+        makeTenRandomMails() {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) => {
+                //i console log ci restituiscono il risultato, in questo caso la generazione di UNA email randomica
+                console.log(response.data);
+                console.log(response.data.response);
+                //this.email = response.
+            });
+        }
+    }
 }).mount('#app');
