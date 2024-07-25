@@ -16,9 +16,7 @@
                     <div class="col-12">
                         <div class="bg-primary text-white text-center rounded py-3">
                             <h1>Vue Email List</h1>
-                            <!--creo il bottone ma per il momento non lo associo/collego a niente perché non ho ancora formulato il metodo per generare 10 email-->
-                            <!-- @click="generateRandomEmail" scrivo il click per il vue.js altrimenti me lo scordo... -->
-                            <button class="btn btn-danger mt-1">Genera e-mail casuale</button>
+                            <button class="btn btn-danger mt-1" @click="generateEmails">Genera e-mail casuale</button>
                         </div>
                     </div>
                 </div>
@@ -32,8 +30,10 @@
                             <div class="card-header">
                                 <h6>Elenco e-mail</h6>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{email}}</li>
+                            <ul v-if="random_emails.length == 10" class="list-group list-group-flush">
+                                <li v-for="(email, index) in random_emails" :key="index" class="list-group-item">
+                                    {{email}}
+                                </li>
                                 <!--
                                 <li class="list-group-item">A second item</li>
                                 <li class="list-group-item">A third item</li>
