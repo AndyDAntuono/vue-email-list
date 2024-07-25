@@ -9,3 +9,4 @@ Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 
 /*SOLUZIONE*/
 - creo prima una stuttura rigida nel file index.html
+- nel vue.js mi creo un array di oggetti contenenti 10 indirizzi email fasulli;
