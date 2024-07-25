@@ -56,11 +56,13 @@ createApp({
     },
     methods: {
         makeTenRandomMails() {
+            //axios è l'http e 'https://flynn.boolean.careers/exercises/api/random/mail' è l'endpoint
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response) => {
                 //i console log ci restituiscono il risultato, in questo caso la generazione di UNA email randomica
                 console.log(response.data);
                 console.log(response.data.response);
-                //this.email = response.
+                //scrivendo come segue faccio apparire l'email randomica anche nel file html
+                this.email = response.data.response
             });
         }
     }
